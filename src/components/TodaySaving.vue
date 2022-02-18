@@ -38,7 +38,13 @@ export default defineComponent({
   },
   methods: {
     rollAgain: function () {
-      axios.get(document.location.origin + '/roll')
+      let today = new Date()
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
+      axios.post(document.location.origin + '/roll', {
+        date: yyyy + "-" + mm + "-" + dd
+      })
       window.location.reload();
     },
   }
