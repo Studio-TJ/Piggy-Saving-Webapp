@@ -1,3 +1,5 @@
+# Note
+Since I focused on iOS app in the past months, this webapp is obsolete now. A big overhaul will be made later. 
 
 # :pig::pig:Piggy Saving
 
