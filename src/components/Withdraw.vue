@@ -34,9 +34,17 @@ export default defineComponent({
   },
   methods: {
     executeWithdraw: function ( amount: any, description: any ) {
+      let todayDate = new Date();
+      var dd = String(todayDate.getDate()).padStart(2, '0');
+      var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = todayDate.getFullYear();
+      var today: string = yyyy + '-' + mm + '-' + dd;
       axios.post(document.location.origin + '/withdraw', {
+          date: today,
           amount: amount,
-          description: description
+          description: description,
+          delete: false,
+          sequence: 0
         })
       window.location.reload();
     },
